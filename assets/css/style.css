@@ -444,6 +444,15 @@ acronym {
   margin-right: 5px;
 }
 
+.markdown-body .toc li{
+  list-style-type: decimal;
+  font-size: 90%;
+}
+
+.article.markdown-body .toc li+li {
+  margin-top: auto;
+}
+
 .article.license {
   font-size: 15px;
   text-align: center;

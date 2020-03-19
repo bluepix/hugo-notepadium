@@ -1,0 +1,8 @@
+{{ if .Params.toc }}
+<section class="markdown-body toc">
+    <header>
+    <h2>{{- T "TOC" -}}</h2>
+    </header>
+    {{.TableOfContents}}
+</section>
+{{ end }}
