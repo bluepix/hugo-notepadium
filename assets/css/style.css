@@ -164,6 +164,13 @@ acronym {
   cursor: help;
 }
 
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 40px;
+}
+
 .image-container,
 .image-container .link,
 .image-container .caption {
