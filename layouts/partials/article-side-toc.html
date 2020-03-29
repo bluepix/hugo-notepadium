@@ -1,7 +1,9 @@
 {{ if .Params.toc }}
-<section class="markdown-body embed-toc">
+<section class="side-toc">
     <div class="toc-container">
-        <h4>{{- T "TOC" -}}</h4>
+        <h4>
+            {{- T "TOC" -}}
+        </h4>
         {{.TableOfContents}}
     </div>
 </section>

@@ -204,7 +204,7 @@ dd {
   max-width: 780px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .site.header {
@@ -449,15 +449,6 @@ dd {
   font-size: 85%;
   opacity: .5;
   margin-right: 5px;
-}
-
-.markdown-body .toc li{
-  list-style-type: decimal;
-  font-size: 90%;
-}
-
-.article.markdown-body .toc li+li {
-  margin-top: auto;
 }
 
 .article.license {
@@ -772,4 +763,129 @@ dd {
 
 .article.markdown-body .lntable tr>:first-child {
   border-right: 1px dashed #e6e6e6;
+}
+
+.toc-container {
+  border-left: 2px solid #eb7350;
+  padding-left: 20px;
+}
+
+.toc-container li {
+  list-style-type: none;
+  font-size: 90%;
+}
+
+#content .toc-container h3,
+#content .toc-container h4 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+#content .toc-container ol,
+#content .toc-container ul {
+  margin-block-end: 20px;
+  -webkit-margin-after: 20px;
+  margin-bottom: auto;
+  padding-inline-start: 0px;
+  -webkit-padding-start: 0px;
+}
+
+#content .toc-container li ul {
+  padding-inline-start: 20px;
+  -webkit-padding-start: 20px;
+}
+
+#content .toc-container li+li {
+  margin-top: auto;
+}
+
+.side-toc {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .side-toc {
+    display: block;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    width: 100%;
+  }
+  .embed-toc {
+    display: none;
+  }
+  .side-toc .toc-container {
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    width: fit-content;
+    max-width: 200px;
+    margin-left: 20px;
+  }
+}
+
+#bottom-sticky {
+  position: sticky;
+  background-color: #fee450;
+  position: -webkit-sticky;
+  bottom: 50px;
+  width: 100%;
+}
+
+#gototop {
+  display: none;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+    margin-top: -50px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,.12);
+  z-index: 1000;
+}
+
+@media (max-width: 1200px) {
+  #gototop {
+    display: block;
+    position: absolute;
+    right: -100px;
+  }
+}
+
+@media (max-width: 940px) {
+  #gototop {
+    right: 0px;
+  }
+}
+
+#gototop::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  height: 5%;
+  width: 30%;
+  background: #eb7350;
+  transform: skew(0deg, -30deg);
+}
+#gototop::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  height: 5%;
+  width: 30%;
+  background: #eb7350;
+  transform: skew(0deg, 30deg);
+}
+#gototop:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+#gototop.show {
+  opacity: 1;
+  visibility: visible;
 }
