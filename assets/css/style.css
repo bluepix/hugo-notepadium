@@ -558,7 +558,7 @@ dd {
   transition: transform 0.25s ease-in-out 0s;
 }
 
-.article.markdown-body img:hover {
+.article.markdown-body a[href*='.'] img:hover {
   -ms-transform: scale(1.04);
   -ms-transition: transform 0.25s ease-in-out 0s;
 

@@ -3,12 +3,13 @@
 {{- $parsed := urls.Parse $url -}}
 {{- $width := $parsed.Query.Get "width" -}}
 {{- $height := $parsed.Query.Get "height" -}}
+{{- $clickable := $parsed.Query.Get "clickable" -}}
 
 {{- if $block -}}
 <span class="image-container"><span class="link">
 {{- end -}}
 <a target="_blank" rel="noopener noreferrer" 
-  href="{{- $url -}}"><img {{ if $block }}class="img"{{ end }} src="{{- $url -}}"
+  {{if $clickable }} href="{{- $url -}}"{{ end }}><img {{ if $block }}class="img"{{ end }} src="{{- $url -}}"
         alt{{- with .Text -}}="{{- . -}}" {{- end -}}
         {{ if $width }} width="{{- $width -}}"{{ end }}
         {{ if $height }} height="{{- $height -}}"{{ end }}/></a>
