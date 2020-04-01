@@ -35,6 +35,8 @@ body {
   padding-right: env(safe-area-inset-right);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
+
+  counter-reset: h2-counter;
 }
 
 h1,
@@ -49,18 +51,41 @@ h6 {
 
 h1 {
   font-size: 26px;
+  counter-reset: h2-counter;
 }
 
 h2 {
   font-size: 24px;
+  counter-reset: h3-counter;
+}
+
+h2::before {
+  content: counter(h2-counter) ".\0000a0\0000a0";
+  counter-increment: h2-counter;
 }
 
 h3 {
   font-size: 22px;
+  counter-reset: h4-counter;
+}
+
+h3::before {
+  content: counter(h2-counter) "." counter(h3-counter) ".\0000a0\0000a0";
+  counter-increment: h3-counter;
 }
 
 h4 {
   font-size: 20px;
+}
+
+h4::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) ".\0000a0\0000a0";
+  counter-increment: h4-counter;
+}
+
+h4.nocount::before {
+  content: none;
+  counter-increment: none;
 }
 
 h5 {
@@ -647,7 +672,7 @@ dd {
 }
 
 .article.markdown-body li+li {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .article.markdown-body>*,
@@ -655,7 +680,7 @@ dd {
 .article.markdown-body blockquote>*,
 .article.markdown-body .footnotes>* {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .article.markdown-body> :first-child,
@@ -826,7 +851,6 @@ dd {
 
 #bottom-sticky {
   position: sticky;
-  background-color: #fee450;
   position: -webkit-sticky;
   bottom: 50px;
   width: 100%;
