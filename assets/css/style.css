@@ -798,6 +798,9 @@ dd {
 .toc-container li {
   list-style-type: none;
   font-size: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #content .toc-container h3,
