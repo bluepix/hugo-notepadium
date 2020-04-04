@@ -1,6 +1,6 @@
 {{- define "main" -}}
 {{- partial "homepage-body.html" . -}}
-{{- $paginator := .Paginate (union (where site.Pages "Params.home" true) (where site.RegularPages "Type" "in" site.Params.mainSections) ) -}}
+{{- $paginator := .Paginate (union (where site.RegularPages "Type" "in" site.Params.mainSections) (where site.Pages "Params.home" true)).ByWeight -}}
 {{- partial "note-list.html" $paginator -}}
 {{- partial "pagination.html" $paginator -}}
 {{- end -}}
