@@ -35,8 +35,6 @@ body {
   padding-right: env(safe-area-inset-right);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
-
-  counter-reset: h2-counter;
 }
 
 h1,
@@ -51,7 +49,6 @@ h6 {
 
 h1 {
   font-size: 26px;
-  counter-reset: h2-counter;
 }
 
 h2 {
@@ -680,7 +677,7 @@ dd {
 .article.markdown-body blockquote>*,
 .article.markdown-body .footnotes>* {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .article.markdown-body> :first-child,
@@ -915,4 +912,8 @@ dd {
 #gototop.show {
   opacity: 1;
   visibility: visible;
+}
+
+.reset-header {
+  counter-reset: h2-counter var(--start);
 }
